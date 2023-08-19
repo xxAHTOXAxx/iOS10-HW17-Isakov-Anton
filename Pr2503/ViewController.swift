@@ -2,6 +2,11 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var ButtonGeneratePassword: UIButton!
+    @IBOutlet weak var buttonPasswordCracking: UIButton!
+    @IBOutlet weak var load: UIActivityIndicatorView!
+    @IBOutlet weak var labelFieldForPassword: UILabel!
+    @IBOutlet weak var textFieldForPassword: UITextField!
     
     var isBlack: Bool = false {
         didSet {
@@ -16,6 +21,15 @@ class ViewController: UIViewController {
     @IBAction func onBut(_ sender: Any) {
         isBlack.toggle()
     }
+    
+    @IBAction func gereratePassword(_ sender: Any) {
+    }
+    
+    @IBAction func crackPassword(_ sender: Any) {
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
