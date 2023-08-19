@@ -33,19 +33,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40P-Ki-aKM">
-                                <rect key="frame" x="87" y="431" width="102" height="35"/>
+                                <rect key="frame" x="121" y="431" width="172" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Generate password"/>
                                 <connections>
                                     <action selector="gereratePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kT5-qK-efO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3b-DS-PG9">
-                                <rect key="frame" x="239" y="431" width="75" height="35"/>
+                                <rect key="frame" x="134" y="474" width="147" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Crack password"/>
                                 <connections>
                                     <action selector="crackPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lqK-6J-vYL"/>
                                 </connections>
@@ -57,7 +57,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="K09-pY-gDf">
-                                <rect key="frame" x="197" y="392" width="20" height="20"/>
+                                <rect key="frame" x="308" y="481" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>

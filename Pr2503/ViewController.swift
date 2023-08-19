@@ -7,6 +7,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var load: UIActivityIndicatorView!
     @IBOutlet weak var labelFieldForPassword: UILabel!
     @IBOutlet weak var textFieldForPassword: UITextField!
+    private var password = "1534p" {
+        didSet {
+            textFieldForPassword.text = password
+        }
+    }
     
     var isBlack: Bool = false {
         didSet {
@@ -21,24 +26,33 @@ class ViewController: UIViewController {
     @IBAction func onBut(_ sender: Any) {
         isBlack.toggle()
     }
-    
-    @IBAction func gereratePassword(_ sender: Any) {
-    }
-    
-    @IBAction func crackPassword(_ sender: Any) {
-    }
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.bruteForce(passwordToUnlock: "1!gr")
+        self.textFieldForPassword.isSecureTextEntry = true
+        self.labelFieldForPassword.text = password
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func gereratePassword(_ sender: Any) {
+        textFieldForPassword.isSecureTextEntry = true
+        password = "25r1"
+        labelFieldForPassword.text = "Пароль еще не взломан"
+    }
+    
+    @IBAction func crackPassword(_ sender: Any) {
+        let queue = DispatchQueue (label: "queue", qos: .background, attributes: .concurrent)
+        ButtonGeneratePassword.isEnabled = false
+        buttonPasswordCracking.isEnabled = false
+        textFieldForPassword.isSecureTextEntry = true
+        load.startAnimating()
+        queue.async {
+            self.bruteForce(passwordToUnlock: String(self.password))
+        }
+    }
+    
+    
     
     func bruteForce(passwordToUnlock: String) {
         let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
