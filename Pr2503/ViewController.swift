@@ -7,7 +7,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var load: UIActivityIndicatorView!
     @IBOutlet weak var labelFieldForPassword: UILabel!
     @IBOutlet weak var textFieldForPassword: UITextField!
-    private var password = "1534p" {
+    private var password = "Пароль еще не взломан" {
         didSet {
             textFieldForPassword.text = password
         }
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     @IBAction func gereratePassword(_ sender: Any) {
         textFieldForPassword.isSecureTextEntry = true
-        password = "25r1"
+        password = "9r1"
         labelFieldForPassword.text = "Пароль еще не взломан"
     }
     
@@ -49,7 +49,9 @@ class ViewController: UIViewController {
         load.startAnimating()
         queue.async {
             self.bruteForce(passwordToUnlock: String(self.password))
+            
         }
+        self.labelFieldForPassword.text = "Пароль взломан"
     }
     
     
@@ -68,10 +70,15 @@ class ViewController: UIViewController {
         }
         
         print(password)
+        DispatchQueue.main.async {
+            self.textFieldForPassword.text = self.password
+            self.textFieldForPassword.isSecureTextEntry = false
+            self.ButtonGeneratePassword.isEnabled = true
+            self.buttonPasswordCracking.isEnabled = true
+            self.load.stopAnimating()
+        }
     }
 }
-
-
 
 extension String {
     var digits:      String { return "0123456789" }
